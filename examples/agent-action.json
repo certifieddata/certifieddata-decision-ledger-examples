@@ -1,0 +1,22 @@
+{
+  "actor": {
+    "id": "ops-agent-prod-us-east",
+    "type": "autonomous_agent"
+  },
+  "decision": {
+    "outcome": "execute_purchase",
+    "reason": "Policy match: dataset within allowed category and budget",
+    "action": "purchase_dataset",
+    "target": "certifieddata://datasets/fraud-detection-synthetic-v7",
+    "amount_usd": 12.00
+  },
+  "explanation": {
+    "reasonCodes": ["POLICY_MATCH", "BUDGET_OK", "VENDOR_ALLOWED"],
+    "rationaleSummary": "Dataset matches training data refresh policy; spend within daily agent budget of $500."
+  },
+  "entity": {
+    "agent_session_id": "sess_2026_04_21_19_03",
+    "policy_id": "pol_training_data_refresh_v2",
+    "parent_decision_id": null
+  }
+}

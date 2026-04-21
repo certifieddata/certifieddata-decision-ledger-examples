@@ -1,0 +1,41 @@
+name: Verify signed decision records
+
+on:
+  push:
+    branches: ["**"]
+    paths:
+      - "records/**/*.json"
+      - ".github/workflows/verify.yml"
+      - "scripts/verify-cli.mjs"
+  pull_request:
+    paths:
+      - "records/**/*.json"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: npm install --omit=dev
+
+      - name: Verify every record in ./records
+        shell: bash
+        run: |
+          shopt -s nullglob
+          fail=0
+          for f in records/**/*.json records/*.json; do
+            [ -f "$f" ] || continue
+            echo "::group::Verifying $f"
+            if ! node scripts/verify-cli.mjs "$f"; then
+              echo "::error file=$f::Signature verification failed"
+              fail=1
+            fi
+            echo "::endgroup::"
+          done
+          exit $fail

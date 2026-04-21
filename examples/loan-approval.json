@@ -1,0 +1,22 @@
+{
+  "actor": {
+    "id": "loan-origination-model-v3",
+    "type": "ai_model"
+  },
+  "decision": {
+    "outcome": "approved",
+    "reason": "Applicant passed credit threshold and affordability test",
+    "amount": 250000,
+    "currency": "USD",
+    "term_months": 360
+  },
+  "explanation": {
+    "reasonCodes": ["CREDIT_SCORE_OK", "DTI_OK", "INCOME_VERIFIED"],
+    "rationaleSummary": "Credit score 742, debt-to-income 28%, income verified via payroll connector."
+  },
+  "entity": {
+    "application_id": "APP-2026-04-21-0817",
+    "model_version": "3.4.1",
+    "feature_snapshot_id": "fs_01JSK7V3M8X9A2P1T4"
+  }
+}

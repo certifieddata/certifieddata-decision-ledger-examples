@@ -1,0 +1,35 @@
+{
+  "name": "certifieddata-decision-ledger-examples",
+  "version": "0.1.0",
+  "description": "Public, runnable examples for the CertifiedData Decision Ledger — sign, verify, and integrate Ed25519-signed AI decision records.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/certifieddata/certifieddata-decision-ledger-examples.git"
+  },
+  "homepage": "https://certifieddata.io/decision-ledger",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "verify:example": "node scripts/verify-cli.mjs",
+    "sign:example": "node scripts/sign-demo-cli.mjs"
+  },
+  "dependencies": {
+    "canonicalize": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.0"
+  },
+  "keywords": [
+    "certifieddata",
+    "decision-ledger",
+    "ai-governance",
+    "ed25519",
+    "rfc-8785",
+    "eu-ai-act",
+    "ai-audit-trail"
+  ]
+}

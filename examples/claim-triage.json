@@ -1,0 +1,21 @@
+{
+  "actor": {
+    "id": "claim-triage-model-v1",
+    "type": "ai_model"
+  },
+  "decision": {
+    "outcome": "route_to_adjuster",
+    "reason": "Claim exceeds straight-through-processing threshold",
+    "priority": "high",
+    "estimated_loss_usd": 48500
+  },
+  "explanation": {
+    "reasonCodes": ["LOSS_THRESHOLD", "VEHICLE_TOTAL_LOSS_LIKELY"],
+    "rationaleSummary": "Photo-based damage estimate 90%+ repair-to-value; STP routing disabled for total-loss candidates."
+  },
+  "entity": {
+    "claim_id": "CLM-7722144",
+    "policy_id": "POL-551288",
+    "model_version": "1.2.0"
+  }
+}
